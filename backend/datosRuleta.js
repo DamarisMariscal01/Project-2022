@@ -1,0 +1,57 @@
+//api
+
+let ruletaDatos = [{   
+    "personajes": [{
+        "pers1" : "pingüino",
+        "pers2" : "cactus",
+        "pers3" : "niña",
+        "pers4" : "taco",
+        "pers5" : "luna",
+        "pers6" : "estrella",
+        "pers7" : "borrego",
+        "pers8" : "quesadilla",
+        "pers9" : "bicicleta",
+        "pers10" : "policía",
+        "pers11" : "flor",
+        "pers12" : "koala",
+        "pers13" : "silla",
+        "pers14" : "chocolate",
+        "pers15" : "piña",
+    }],
+
+    "acciones": [{
+        "acc1" : "tomando jugo",
+        "acc2" : "muriendo",
+        "acc3" : "corriendo",
+        "acc4" : "llorando",
+        "acc5" : "entrenando",
+        "acc6" : "bailando",
+        "acc7" : "cantando",
+        "acc8" : "programando",
+        "acc9" : "cocinando",
+        "acc10" : "estudiando",
+        "acc11" : "chismeando",
+        "acc12" : "saltando",
+        "acc13" : "comiendo",
+        "acc14" : "durmiendo",
+        "acc15" : "pintando",
+    }],
+
+    "complementos": [{
+        "comp1" : "en la cama",
+        "comp2" : "en la alberca",
+        "comp3" : "en la estética",
+        "comp4" : "en la alfombra",
+        "comp5" : "en la escuela",
+        "comp6" : "en la estación de tren",
+        "comp7" : "en Walmart",
+        "comp8" : "en Marte",
+        "comp9" : "en un avión",
+        "comp10" : "en la playa",
+        "comp11" : "en la México",
+        "comp12" : "en el País de las Maravillas",
+        "comp13" : "en Egipto",
+        "comp14" : "en una tienda de ropa",
+        "comp15" : "en Michoacán",
+    }]
+}]
