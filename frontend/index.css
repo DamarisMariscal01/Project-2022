@@ -1,0 +1,169 @@
+body{
+    text-align: center;
+    font-family: "Raleway" , sans-serif;
+    font-weight: bold;
+    width: 100%;
+    /* height: 100%; */
+}
+
+/*navegador fijo*/
+.navegador-fijo{
+    width: 100%;
+    margin: auto;
+    overflow: hidden;
+    align-items: center;
+    color: white;
+}
+
+header , nav {
+  width: 100%;
+  position: center;
+  z-index: 10;
+  float: center;
+}
+
+nav {
+  float: center; /* Desplazamos el nav hacia el centro */
+  justify-content: center;
+  position: fixed;
+  width: 50%;
+}
+
+ul {
+    list-style: none;
+    overflow: hidden; /* Limpiamos errores de float */
+    background-color:rgba(116, 116, 116, 0.737);
+}
+
+.nav-link{
+    border-radius: 12rem;
+}
+
+li {
+    display: block; /* Convertimos los elementos a en elementos bloque para manipular el padding */
+    padding: 20px;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    float: left;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+  
+#home:hover,#gallery:hover,#draw:hover,#pixel:hover {
+    background-color: rgb(244, 244, 244);
+}
+
+p{
+    font-size: 50px;
+    overflow: hidden;
+}
+
+img{
+    height: 25%;
+    width: 25%;
+    margin-left: 5%;
+    border-radius: 100rem;
+}
+
+/* img#logo{
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    background-size:cover;
+    background-position:center;
+} */
+
+#imgsHomeE {
+    position: relative; 
+    width: 100%; 
+    height: 25%;    
+    /* display: flex;
+    align-items: center; */
+    /* background-size:cover;
+    background-position:center;
+    object-fit:cover; */
+    border-radius: 100rem; 
+    top: 40px;
+    bottom: 40px;
+}
+
+.presentationCanva{
+    position: relative; 
+    /* width: 100%;  */
+    height: 0; 
+    padding-top: 64%;
+    /* padding-bottom: 39.7%;  */
+    /* box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16);  */
+    margin-top: 5%; 
+    /* margin-bottom: 0.9em;  */
+    /* margin-left: 25%; */
+    overflow: hidden;
+    /* border-radius: 8px;  */
+    /* will-change: transform; */
+    background-color: #66a0fd;
+}
+
+.enlaceCanvaIncrustado {
+    position: absolute; 
+    width: 84%; 
+    height: 79.777%;
+    top: 0; 
+    left: 0; 
+    border: none; 
+    padding: 0;
+    margin: 0;
+    border-radius: 1rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.canvaDiseno{
+    position: absolute;
+    width: 100%;
+    height: 10%;
+    top: 90%;
+    left: 0;
+    border: none;
+    padding: 0;
+    margin: 0;
+    border-radius: 1rem;
+}
+
+.videosHome{
+    position: relative;
+    width: 100%;
+    height: 10%;
+    /* top: 90%; */
+    left: 6%;
+    border: none;
+    padding: 0;
+    margin: 0;
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+
+#home , #homeE{
+    background-color: rgb(146, 188, 255);
+    color: #000;
+}
+
+#gallery , #galleryY{
+    background-color: rgb(255, 214, 57);
+    color: #000;
+}
+
+#draw , #drawW{
+    background-color: #FD668B;
+    color: #000;
+}
+
+#pixel , #pixelL{
+    background-color: #30D95D;
+    color: #000;
+}

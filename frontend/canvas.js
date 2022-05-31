@@ -1,6 +1,8 @@
+//const { default: fetch } = require("node-fetch");
+
 var canvas = document.getElementById("canvas")
 //var ctx nos permite manipular el canvas
-var ctx = canvas.getContext('2');
+var ctx = canvas.getContext('2d');
 var rect =canvas.getBoundingClientRect();
 var x=0, y=0, dibujando=false, color="black", grosor="1"; 
 // c es mi parametro de color
@@ -41,6 +43,7 @@ canvas.addEventListener('mouseup',function(e) {
 
 //esta funcion recibe 4 parametros, x y y inicial y x y y final
 function dibujar(x1,y1,x2,y2) {
+    console.log(x1,y1,x2,y2);
     ctx.beginPath()
     ctx.strokeStyle= color;
     ctx.lineWidth=grosor;
@@ -49,3 +52,22 @@ function dibujar(x1,y1,x2,y2) {
     ctx.stroke();
     ctx.closePath();
 }
+
+
+function convertCanvasToImage() {
+    console.log('hola');
+    let canvas = document.getElementById("canvas");
+    let image = document.getElementById('img');
+    console.log(typeof canvas.toDataURL());
+    image.src = canvas.toDataURL();
+    fetch('http://localhost:3000/guardarIMG', {
+        headers: {
+            'Content-Type': 'application/json'
+            // 'Content-Type': 'application/x-www-form-urlencoded',
+          },
+        method: "POST",
+        body:JSON.stringify({"img": canvas.toDataURL()})
+    })
+    image.classList.add("canva")
+  
+  }

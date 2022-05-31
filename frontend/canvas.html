@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas</title>
+<link rel="stylesheet" href="canvas.css">
+</head>
+<body>
+    <div>
+        <canvas id="canvas" class="canva" width="500px" height="500px">
+
+        </canvas>
+        <br>
+       
+        <input type="color" name="" id="color" oninput="defcolor(this.value)";>
+        <input type="range" id="grosor" oninput="defgrosor(this.value)" min="1" max="7" value="1">
+        </div>
+        <input type="button" onclick="convertCanvasToImage()" name="submit"> 
+        <div id="mdn"></div>
+        <img  id="img" src="" alt="">
+    <script src="./canvas.js"></script>
+ 
+</body>
+</html>

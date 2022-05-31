@@ -1,13 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css1.css">
+    <link rel="stylesheet" href="./pixel.css">
     <title>Pixel</title>
 </head>
+
 <body>
+    <div class="navbar">
+        <button class="btn">Reset</button>
+        <button id="crearimagen" onclick="crear()">IMAGEN</button>
+        <input type="color" value="#A78BEA" class="color">
+        <input type="number" value="20" class="size">
+    </div>
+   
     
+        <div class="container" id="contenido"></div>
+        
+    <div id="cuadrado"></div>
+   <!-- <input type="button" onclick="convertCanvasToImage()" name="submit"> -->
+   <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    <script src="./pixel.js"></script>
 </body>
+
 </html>
