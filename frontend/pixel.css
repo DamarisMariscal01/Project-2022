@@ -143,13 +143,17 @@ li {
     --bs-modal-width: 1000px;
 }}
 
+.position-modal{
+    top: 64px;
+}
+
 .textInspo, h1{
     text-align: center;
 }
 
 .divContainer{
-    
-    padding: 50px;
+    padding-top: 50px;
+    padding-bottom: 50px;
     width: 33%;
     /* justify-content: space-evenly; */
     text-align: center;
@@ -180,9 +184,9 @@ li {
     border-radius: 8px;
     border: none;
     padding: 8px;
-    position: relative;
     align-items: center;
-    /* width: 100%; */
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* background colors */
