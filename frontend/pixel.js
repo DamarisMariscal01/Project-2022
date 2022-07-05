@@ -1,10 +1,40 @@
+// Bloquear y desbloquear pags
+function home(){
+    document.getElementById("homeE").style.display="block";
+    document.getElementById("galleryY").style.display="none";
+    document.getElementById("drawW").style.display="none";
+    document.getElementById("pixelL").style.display="none";
+}
+
+function draw(){
+    document.getElementById("drawW").style.display="block";
+    document.getElementById("homeE").style.display="none";
+    document.getElementById("galleryY").style.display="none";
+    document.getElementById("pixelL").style.display="none";
+}
+
+function gallery(){
+    document.getElementById("galleryY").style.display="block";
+    document.getElementById("homeE").style.display="none";
+    document.getElementById("drawW").style.display="none";
+    document.getElementById("pixelL").style.display="none";
+}
+
+function pixel(){
+    document.getElementById("pixelL").style.display="block";
+    document.getElementById("homeE").style.display="none";
+    document.getElementById("galleryY").style.display="none";
+    document.getElementById("drawW").style.display="none";
+}
+
+
 const container = document.querySelector('.container');
 const sizeE1 = document.querySelector('.size')
 let size = sizeE1.value
 const color = document.querySelector('.color')
 const resetbtn = document.querySelector('.btn')
 
-let draw = false
+let draw_ = false
 //crea el grid de el numero yxy ejemplo  4x4
 function populate(size){
     container.style.setProperty('--size',size)
@@ -13,7 +43,7 @@ function populate(size){
         div.classList.add('pixel')
 
         div.addEventListener("mouseover", function() {
-            if (!draw) return 
+            if (!draw_) return 
             div.style.backgroundColor = color.value;
         })
 
@@ -26,10 +56,10 @@ function populate(size){
 
 }
 window.addEventListener("mousedown", function() {
-    draw = true
+    draw_ = true
 })
 window.addEventListener("mouseup", function() {
-    draw = false
+    draw_ = false
 })
  
 function reset() {
@@ -47,7 +77,7 @@ populate(size)
 
 function crear() {
     html2canvas(document.getElementById("contenido")).then(canvas => {
-        let imagen = document.getElementById("cuadrado")
+        // let imagen = document.getElementById("cuadrado")
         console.log(canvas);
         var anchor = document.createElement("a");
         anchor.href = canvas.toDataURL("image/png");

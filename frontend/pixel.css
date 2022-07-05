@@ -1,31 +1,79 @@
-*{
-/* margin: 0;*/
-    padding: 0;
-}
-
-/* html, body{
-    height: 100%;
+/* body{
+    background-color: #30D95D;
 } */
 
-body{
+/* div principal */
+.contenedorPrincipal{
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
+    flex-direction: row-reverse;
+    text-align: center;
+    font-family: "Raleway" , sans-serif;
+    font-weight: bold;
+    width: 100%;
+    /* background-color: #30D95D; */
+
 }
 
+/*navegador fijo*/
+.navegador-fijo{
+    width: 100%;
+    margin: auto;
+    overflow: hidden;
+    align-items: center;
+    color: white;
+}
+
+header , nav {
+  /* width: 100%; */
+  position: center;
+  z-index: 10;
+  /* float: center; */
+}
+
+nav {
+  float: center; /* Desplazamos el nav hacia el centro */
+  justify-content: center;
+  position: fixed;
+  /* width: 100%; */
+}
+
+ul {
+    list-style: none;
+    overflow: hidden; /* Limpiamos errores de float */
+    background-color:#a2a2a2;
+}
+
+.nav-link{
+    border-radius: 12rem;
+}
+
+li {
+    display: block; /* Convertimos los elementos a en elementos bloque para manipular el padding */
+    padding: 20px;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    float: left;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* PIXEL */
 .navbar, .container{
     background-color: black;
-    width: 800px;
+    /* width: 800px; */
     border-radius: 3px;
 }
 
 .navbar{
-    padding: 1em;
-    margin-bottom: 1em;
+    padding: 0.5em;
+    /* margin-bottom: 1em; */
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-right: 100px;
 }
 
 .btn, input{
@@ -40,19 +88,133 @@ body{
 }
 
 .container{
-    --size:4;
-    height: 800px;
+    --size:20;
+    height: 475px;
+    width: 475px !important;
     display:grid;
     grid-template-columns: repeat(var(--size), 1fr);
     grid-template-rows: repeat(var(--size), 1fr);
     gap: 2px;
-    padding: 3px;
+    padding: 0 !important;
+    margin: 10px;
 }
 
 .pixel{
-    background-color: rgb(61, 61, 61);
-    border-radius: 2px;
+    background-color: #353535;
+    border-radius: 1px;
 }
 
-/* #crearImagen {
-} */
+#crearImagen {
+    border-radius: 100px;
+    width: 60px;
+    height: 60px;
+}
+
+.color{
+    width: 80px;
+    height: 80px;
+    border: none;
+    /* border-radius: 100%; */
+    background-color: transparent;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+.color::-webkit-color-swatch{
+    border-radius: 50%;
+    border: 5px rgb(227, 227, 227) solid ;
+}
+
+/* deco del modal */
+.modal-body{
+    background-color: #9cee9f;
+}
+
+.modalContainer{
+    display: flex;
+    /* position: relative; */
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+
+@media (min-width: 992px){
+.modal-lg, .modal-xl {
+    --bs-modal-width: 1000px;
+}}
+
+.textInspo, h1{
+    text-align: center;
+}
+
+.divContainer{
+    
+    padding: 50px;
+    width: 33%;
+    /* justify-content: space-evenly; */
+    text-align: center;
+    border-radius: 20px;
+    /* float: center; */
+    /* align-content: column; */
+    /* position: relative; */
+}
+
+.divWords{
+    background-color: #19cb1c; 
+    /* position: relative;  */
+}
+
+.divImages{
+    background-color: #3ccf37;
+    /* position: relative; */
+}
+
+.divSentences{
+    background-color: #5bd64d;
+    /* position: relative; */
+}
+
+#buttonWords, #buttonImages, #buttonSentences{
+    background-color: #99ff9d;
+    color: rgb(0, 0, 0);
+    border-radius: 8px;
+    border: none;
+    padding: 8px;
+    position: relative;
+    align-items: center;
+    /* width: 100%; */
+}
+
+/* background colors */
+#home:hover,#gallery:hover,#draw:hover,#pixel:hover {
+    background-color: rgb(244, 244, 244);
+}
+
+#home , #homeE{
+    background-color: rgb(146, 188, 255);
+    color: #000;
+}
+
+#gallery , #galleryY{
+    background-color: rgb(255, 214, 57);
+    color: #000;
+}
+
+#draw , #drawW{
+    background-color: #FD668B;
+    color: #000;
+}
+
+#pixel , #pixelL{
+    background-color: #30D95D;
+    color: #000;
+}
+
+#pixelL{
+    height: 90vh;
+}
+
+*{
+/* margin: 0;*/
+    padding: 0;
+}

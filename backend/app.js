@@ -23,7 +23,7 @@ app.post('/guardarIMG', (req, res) => {
     });
 
     let date = new Date().getMilliseconds();
-    let pathSave = "C:/Users/Alive User/Desktop/images/img" + date + ".txt";
+    let pathSave = "C:\Users\alive\OneDrive\Desktop\Project-2022\images_canvas" + date + ".txt";
     // Guardar con un búfer como contenido de una imagen base64
     fs.writeFile(pathSave, fileContent, err => {
         if (err)
@@ -43,9 +43,9 @@ app.post('/guardarIMG', (req, res) => {
 //HASTA AQUI GUARDA LA IMAGEN
 
 
-
+//CANVAS
 app.get('/leerImagenes', (req, res) => {
-    const dirname = 'C:/Users/Alive User/Desktop/images/'
+    const dirname = "C:\Users\alive\OneDrive\Desktop\Project-2022\images canvas"
     let directorio = fs.readdirSync(dirname)
 
     console.log('dierctorio leido', directorio);
@@ -107,7 +107,7 @@ app.post('/guardarIMGPIXEL', (req, res) => {
     });
 
     let date = new Date().getMilliseconds();
-    let pathSave = "C:/Users/Alive User/Desktop/imagesPixel/img" + date + ".txt";
+    let pathSave = "C:\Users\alive\OneDrive\Desktop\Project-2022\images_pixel" + date + ".txt";
     // Guardar con un búfer como contenido de una imagen base64
     fs.writeFile(pathSave, fileContent, err => {
         if (err)
@@ -125,7 +125,7 @@ app.post('/guardarIMGPIXEL', (req, res) => {
 }) 
 
 app.get('/leerImagenesPixel', (req, res) => {
-    const dirname = 'C:/Users/Alive User/Desktop/imagesPixel/'
+    const dirname = "C:\Users\alive\OneDrive\Desktop\Project-2022\images_pixel"
     let directorio = fs.readdirSync(dirname)
 
     console.log('dierctorio leido', directorio);

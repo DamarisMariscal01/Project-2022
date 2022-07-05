@@ -4,7 +4,6 @@ body{
     font-weight: bold;
     width: 100%;
     /* height: 100%; */
-    
 }
 
 /*navegador fijo*/
@@ -33,7 +32,7 @@ nav {
 ul {
     list-style: none;
     overflow: hidden; /* Limpiamos errores de float */
-    background-color:#a2a2a2;
+    background-color:rgba(116, 116, 116, 0.737);
 }
 
 .nav-link{
@@ -89,7 +88,6 @@ img{
     border-radius: 100rem; 
     top: 40px;
     bottom: 40px;
-    overflow: hidden;
 }
 
 .presentationCanva{
@@ -121,7 +119,6 @@ img{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    overflow: hidden;
 }
 
 .canvaDiseno{
@@ -134,23 +131,98 @@ img{
     padding: 0;
     margin: 0;
     border-radius: 1rem;
-    overflow: hidden;
 }
 
 .videosHome{
-    /* position: absolute; */
-    display: flex;
-    padding: 75px 50px;
-    /* margin: 20px; */
-    /* right: 12px; */
-    /* border-radius: 8px !important; */
+    position: relative;
+    width: 100%;
+    height: 10%;
+    /* top: 90%; */
+    left: 6%;
+    border: none;
+    padding: 0;
+    margin: 0;
+    border-radius: 1rem;
     overflow: hidden;
-    justify-content: space-evenly;
-    /* background-color: none; */
 }
 
-.vid1, .vid2{
-    border-radius: 20px !important;
+/* ----------------------------------------------- */
+/* DRAW  Y GALLERY*/
+
+.canva{
+    border:1px solid black;
+    background-color: white;
+    border-radius: 5px;
+}
+
+.size{
+    height: 150px;
+    width: 150px;
+    margin-left: 4em;
+    margin-right: 4em;
+}
+
+.yes{
+    text-align: center;
+}
+
+/* ----------------------------------------------- */
+/* PIXEL */
+
+*{
+/* margin: 0; */
+    padding: 0;
+}
+
+/* html, body{
+    height: 100%;
+}*/
+
+.sectionPixel{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.navbar, .container{
+    background-color: black;
+    width: 800px;
+    border-radius: 3px;
+}
+
+.navbar{
+    padding: 1em;
+    margin-bottom: 1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn, .size, .color{
+    height: 35px;
+    padding: 0 1em
+}
+
+.color{
+    padding: 0 .25em;
+    width: 100px;
+    margin: 0 1em;
+}
+
+.container{
+    --size:4;
+    height: 800px;
+    display:grid;
+    grid-template-columns: repeat(var(--size), 1fr);
+    grid-template-rows: repeat(var(--size), 1fr);
+    gap: 2px;
+    padding: 3px;
+}
+
+.pixel{
+    background-color: rgb(61, 61, 61);
+    border-radius: 2px;
 }
 
 /* background colors */
