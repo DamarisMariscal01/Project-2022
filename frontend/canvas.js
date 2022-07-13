@@ -1,45 +1,19 @@
-// Bloquear y desbloquear pags
-function home(){
-    document.getElementById("homeE").style.display="block";
-    document.getElementById("galleryY").style.display="none";
-    document.getElementById("drawW").style.display="none";
-    document.getElementById("pixelL").style.display="none";
-}
-
-function draw(){
-    document.getElementById("drawW").style.display="block";
-    document.getElementById("homeE").style.display="none";
-    document.getElementById("galleryY").style.display="none";
-    document.getElementById("pixelL").style.display="none";
-}
-
-function gallery(){
-    document.getElementById("galleryY").style.display="block";
-    document.getElementById("homeE").style.display="none";
-    document.getElementById("drawW").style.display="none";
-    document.getElementById("pixelL").style.display="none";
-}
-
-function pixel(){
-    document.getElementById("pixelL").style.display="block";
-    document.getElementById("homeE").style.display="none";
-    document.getElementById("galleryY").style.display="none";
-    document.getElementById("drawW").style.display="none";
-}
-
-
-//const { default: fetch } = require("node-fetch");
-
 var canvas = document.getElementById("canvas")
 //var ctx nos permite manipular el canvas
 var ctx = canvas.getContext('2d');
+
+var commands = [];//nuevo
 var rect =canvas.getBoundingClientRect();
 var x=0, y=0, dibujando=false, color="black", grosor="1"; 
 // c es mi parametro de color
 function defcolor(c){
+   // erase= false
 color =c;
+ctx.globalCompositeOperation = 'source-over'
 
 }
+
+
 function defgrosor(g) {
     grosor = g;
 }
@@ -75,21 +49,30 @@ canvas.addEventListener('mouseup',function(e) {
 function dibujar(x1,y1,x2,y2) {
     console.log(x1,y1,x2,y2);
     ctx.beginPath()
+    
     ctx.strokeStyle= color;
     ctx.lineWidth=grosor;
+   // ctx.globalCompositeOperation = 'source-over' //nuevo
     ctx.moveTo(x1,y1)
     ctx.lineTo(x2,y2); //mover el puntero y dibujar una linea hasta x2 y2
     ctx.stroke();
+
     ctx.closePath();
+   // erase= false
 }
 
+function erase(){
+    ctx.globalCompositeOperation = 'destination-out'
+   // erase=true
+}
 
 function convertCanvasToImage() {
+    alert('Your drawing has been uploaded to the gallery!')
     console.log('hola');
     let canvas = document.getElementById("canvas");
-    let image = document.getElementById('img');
+   // let image = document.getElementById('img');
     console.log(typeof canvas.toDataURL());
-    image.src = canvas.toDataURL();
+//image.src = canvas.toDataURL();
     fetch('http://localhost:3000/guardarIMG', {
         headers: {
             'Content-Type': 'application/json'
@@ -97,7 +80,41 @@ function convertCanvasToImage() {
           },
         method: "POST",
         body:JSON.stringify({"img": canvas.toDataURL()})
+       
     })
-    image.classList.add("canva")
+    //image.classList.add("canva")
   
+  }
+  ////////////////////////////////////////////////////////////////////////////borrable
+
+  function execute() {
+    var commandType = arguments[0];
+    var data = Array.prototype.slice.call(arguments, 1);
+    
+    if (!commandTypes.hasOwnProperty(commandType))
+      throw new Error(commandType + ' is not a real command');
+  
+    commandTypes[commandType].apply(null, data);
+  }
+  
+  function pushAndExecute() {
+    commands.push(arguments);
+    execute.apply(null, arguments);
+  }
+
+  function handleKeys(evt) {
+    if (evt.ctrlKey && evt.key === 'z') {
+       console.log('undo');
+  
+      // Remove the most recent command from the list
+      commands.splice(-1, 1);
+  
+      // Clear canvas
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+  
+      // Re-play all commands (re-draw canvas from scratch)
+      commands.forEach(function (command) {
+        execute.apply(null, command);
+      });
+    }
   }
